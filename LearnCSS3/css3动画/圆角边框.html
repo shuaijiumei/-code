@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圆角边框</title>
+</head>
+<style>
+    #box1{
+        width: 200px;
+        height: 300px;
+        border: 1px solid gray;
+        /* 设置圆角  完整格式，两个参数，八个值  水平半径/垂直半径*/
+        /* border-radius: 10px 20px 30px 40px /10px 20px 30px 40px; */
+        /* 关于圆角的形成 */
+
+        /* 一个参数，四个值 */
+        border-radius: 10px 20px 30px 40px;
+        /* 一个参数，两个值，对角线  左上和右下*/
+        border-radius: 10px 20px;
+        /* 一个参数，一个值 */
+        border-radius: 10px;
+        /* 任意给 */
+        border-radius: 10px / 20px 30px;
+    }
+</style>
+<body>
+    <div id="box1">
+        <h2>i love hx</h2>
+        <h3> it is true</h3>
+    </div>
+</body>
+</html>
