@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <style>
+    main{
+      display: flex;
+      width: 800px;
+      height: 300px;
+      border: 1px solid black;
+    }
+    main div:nth-child(1){
+      flex: 1 1 100px;
+      background-color: grey;
+    }
+    
+    main div:nth-child(2){
+      flex: 1 2 200px;
+      background-color: red;
+    }
+    
+    main div:nth-child(3){
+      flex: 1 3 300px;
+      background-color: green;
+    }
+  </style>
+
+  <!-- 
+计算公式： 
+    缩小比例 = 不足的空间 / （sum（元素宽度*缩小比例）
+    最终尺寸 = 元素宽度 - （flex-shrink系数 * 元素原本宽度）*缩小比例
+  -->
+<body>
+  <main>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </main>
+</body>
+</html>
