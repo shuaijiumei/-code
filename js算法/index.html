@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <main>
-        <article>
-
-        </article>
-    </main>
     <script>
-        document.write(`<p>i love hx</p>`);
+        document.addEventListener("visibilitychange",function(){
+            if(document.hidden){
+                console.log("show");
+            }
+        })
+
+        const btn = document.querySelector(".public_submit");
+        btn.click();
+        
+        const btn1 = document.querySelector(".public_btn");
+        console.log(btn1);
     </script>
 </body>
 </html>

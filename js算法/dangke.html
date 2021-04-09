@@ -1,0 +1,87 @@
+<html lang="zh"><head>
+  <meta charset="UTF-8">
+  <title>登录 - 入党在线培训平台</title>
+  <link rel="stylesheet" type="text/css" href="/static/www/css/public.css?v=713fb7da5474daaa6b9f308622ad348a">
+  <link rel="stylesheet" type="text/css" href="/static/www/css/user.css?v=16f3bd082a97571917941e8e4e0150c9">
+  <link rel="stylesheet" type="text/css" href="/static/www/iconfont/other/iconfont.css?v=8a2037dc7ce80354969589490d838fbf}">
+  <style>
+      .study_plat {
+          line-height: 50px;
+          background-color: brown;
+          float: left;
+          width: 50%;
+          color: white;
+          text-align: center;
+          font-size: 16px;
+          font-weight: 200;
+      }
+
+      .exam_plat {
+          line-height: 50px;
+          background-color: #eee;
+          float: left;
+          width: 50%;
+          color: #333;
+          text-align: center;
+          font-size: 16px;
+      }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="login login_bg" style="">
+      <a href="#" class="login_img"></a>
+      <h1 style="margin:0 auto;padding-bottom: 40px;font-size:36px;color:#000;text-align:center;">入党在线培训平台</h1>
+      <div class="login_div">
+          <input type="hidden" name="_xsrf" value="2|14701b4c|88b93ad0aa1f968d8cbd75f959169bda|1617852422">
+          <div style="width:100%;float:left;overflow: hidden;">
+              <div class="study_plat">学习平台登录</div>
+              <div class="exam_plat">
+                  <a href="/exam/login">考试平台登录</a>
+              </div>
+          </div>
+          <h1></h1>
+          <div class="login_input" style="margin-top:10px;">
+              <input type="text" placeholder="请输入您的学号" id="user_sid" value="">
+              <i class="iconfont"></i>
+          </div>
+          <div class="login_input">
+              <input type="password" placeholder="请输入您的密码" id="user_pass" value="">
+              <i class="iconfont"></i>
+          </div>
+          <div class="login_input login_input1">
+              <input type="text" placeholder="请输入您的验证码" name="" id="v_code" value="">
+              <b><img src="/user/captcha?v=1617852424128" title="看不清？换一张" id="verify"></b>
+          </div>
+          <div class="error_text"></div>
+          <a href="javascript:void(0);" class="login_btn" id="login_btn">登录</a>
+              <a href="/user/forget" class="login_forget ">忘记密码?</a>
+          <a href="/user/register" class="register">立即注册</a>
+      </div>
+      <div class="foot foot_bg">技术支持：<a href="http://www.iwingchina.com" style="color:white;margin-right:15px;" target="_blank">北京艾唯博瑞科技有限公司</a></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+  var browser = navigator.userAgent.toLowerCase();
+  var isMobile = false;
+  for (var i = 0; i < mobileAgent.length; i++) {
+      if (browser.indexOf(mobileAgent[i]) != -1) {
+          isMobile = true;
+          location.href = '/user_wap';  //跳转指定链接
+          break;
+      }
+  }
+</script>
+<script>
+    const vedio_player = document.querySelector('#video');
+    vedio_player.muted = true;
+    vedio_player.addEventListener("ended",function(){
+        return true;
+    })
+
+</script>
+
+
+</body></html>

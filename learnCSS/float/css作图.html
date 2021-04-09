@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    main{
+      width: 50vw;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 3px solid pink;
+    }
+    /* 圆形 */
+    main>div:nth-child(1){
+      float: left;
+      width: 100px;
+      height: 100px;
+      padding: 20px;
+      background-color: lightblue;
+      clip-path: circle(50% at center);  /*center是锚点*/
+    }
+    /* 三角形 */
+    main>div:nth-child(2){
+      float: left;
+      width: 100px;
+      height: 100px;
+      padding: 20px;
+      margin: 20px;
+      background-color: lightseagreen;
+      clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    }
+        /* 梯形 */
+        main>div:nth-child(3){
+      float: left;
+      width: 100px;
+      height: 100px;
+      padding: 20px;
+      margin: 20px;
+      background-color: lightseagreen;
+      clip-path: polygon(100% 0,75% 100%, 25% 100%, 0 0);
+    }
+            /* 椭圆*/
+            main>div:nth-child(4){
+      float: left;
+      width: 100px;
+      height: 100px;
+      padding: 20px;
+      margin: 20px;
+      background-color: lightseagreen;
+      clip-path: ellipse(30% 20% at 50% 50%);
+    }
+  </style>
+<body>
+  <main>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </main>
+</body>
+</html>

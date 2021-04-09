@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    main{
+      display: grid;
+      width: 400px;
+      height: 300px;
+      border: 1px solid pink;
+
+      grid-template: repeat(3,1fr)/repeat(4,1fr);
+    }
+    main>div{
+      background-color: darkcyan;
+      padding: 10px;
+      box-sizing: border-box;
+      background-clip: content-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    main>div:first-child{
+      grid-row: 2/3;
+      grid-column: 4/5;
+    }
+    main>div:nth-of-type(2){
+      grid-row-start: 1;
+      grid-row-end: span 3;
+      grid-column-end: span 2;
+    }
+  </style>
+<body>
+  <main>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+
+  </main>
+</body>
+</html>
