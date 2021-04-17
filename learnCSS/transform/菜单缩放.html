@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    ul {
+        position: relative;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    main {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #44bd32;
+    }
+    
+    main>div {
+        margin-right: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ff6348;
+        background-clip: border-box;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        position: relative;
+    }
+    
+    main>div>ul>li {
+        position: absolute;
+        top: 20px;
+        left: -50px;
+        transform: scale(0);
+    }
+    
+    main>div>strong {
+        text-transform: uppercase;
+    }
+    
+    main>div:hover>ul>li {
+        transform: scale(1);
+    }
+</style>
+
+<body>
+    <main>
+        <div>
+            <strong>Video</strong>
+            <ul>
+                <li>sadasdsadsadsa</li>
+                <li>sadasd</li>
+                <li>fasfas</li>
+            </ul>
+
+        </div>
+        <div>
+            <strong>Live</strong>
+            <ul>
+                <li>sadasdsadsadsa</li>
+                <li>sadasd</li>
+                <li>fasfas</li>
+            </ul>
+        </div>
+    </main>
+</body>
+
+</html>

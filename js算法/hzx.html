@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .button {
+        color: darkcyan;
+        background-color: palevioletred;
+    }
+    
+    .button .current {
+        background-color: lightblue;
+        color: lightcoral;
+    }
+</style>
+
+<body>
+    <ul class="button">
+        <li class="current">hzx</li>
+        <li>sda</li>
+        <li>sddsa</li>
+        <li>awd</li>
+    </ul>
+
+    <script>
+        const li_list = document.querySelectorAll('li');
+        for (const li of li_list) {
+            li.addEventListener('click', function() {
+                for (const liC of li_list) {
+                    liC.className = '';
+                }
+                li.className = 'current';
+            })
+        }
+    </script>
+</body>
+
+</html>
