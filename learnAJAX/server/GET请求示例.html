@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    div {
+        width: 300px;
+        height: 300px;
+        background-color: darkcyan;
+    }
+    
+    button {
+        position: absolute;
+        top: 150px;
+        border: none;
+        padding: 10px;
+        color: black;
+        outline: none;
+        font-weight: 500;
+        font-size: 14px;
+        background-color: darksalmon;
+        transition: .2s;
+    }
+    
+    button:hover {
+        font-size: 20px;
+        font-weight: 600;
+        background-color: lightblue;
+        padding: 15px;
+        box-shadow: 5px 5px 10px dimgrey;
+        transition-duration: .3s;
+    }
+    
+    button:active {
+        background-color: dimgrey;
+    }
+</style>
+
+<body>
+    <button>点击发送AJAX请求</button>
+    <div>
+    </div>
+</body>
+<script>
+    const btn = document.querySelector('button');
+    const div = document.querySelector('div');
+
+    btn.onclick = function() {
+        //1.  创建对象
+        const xhr = new XMLHttpRequest();
+        //2. 初始化 设置请求方法和url
+        xhr.open('GET', 'http://localhost:8000/server');
+        //3.发送
+        xhr.send();
+        //4.事件绑定  处理服务器返回的结果
+        // readystate 是 xhr 对象中的属性，表示状态 0 1 2 3 4
+        // 0  ：请求未初始化
+        // 1  ：服务器连接已建立
+        // 2  ：请求已接收
+        // 3  ：请求处理中
+        // 4  ：请求已完成，且响应已就绪
+
+        xhr.onreadystatechange = function() {
+            // 判断readystate
+            if (xhr.readyState === 4) {
+                // 判断响应状态码
+                // 2xx 都是成功
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    //处理结果 行 头 空行 体
+                    //1. 响应行
+                    console.log(xhr.status); //状态码
+                    console.log(xhr.statusText); //状态字符串
+                    console.log(xhr.getAllResponseHeaders); // 所有响应头
+                    console.log(xhr.response); //响应体
+
+                    div.innerHTML = xhr.response;
+                } else {
+
+                }
+            }
+        }
+
+    }
+</script>
+
+</html>
