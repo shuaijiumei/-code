@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-color: chocolate;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    button {
+        outline: none;
+        border: none;
+        background-color: cornflowerblue;
+        padding: 20px;
+        margin: 20px;
+        transition-duration: .5s;
+        font-size: medium;
+    }
+    
+    button:hover {
+        background-color: darkcyan;
+        padding: 30px;
+        font-weight: 700;
+        font-size: larger;
+        /* transition-duration: .1s; */
+    }
+    
+    button:active {
+        transition-duration: .1s;
+        color: wheat;
+        background-color: lightcoral;
+        box-shadow: 5px 5px 10px gray;
+    }
+</style>
+
+<body>
+    <button>GET</button>
+    <button>POST</button>
+    <button>AJAX</button>
+</body>
+<script>
+    const axios = require('axios');
+
+    const btns = document.querySelectorAll('button');
+
+    btns[0].onclick = function() {
+        //GET请求
+        axios.get('http://127.0.0.1:8000/axios-server', {
+            //url 参数
+            params: {
+                id: 100,
+                vip: 7
+            },
+            //头信息
+            headers: {
+                name: 'tby',
+                lover: 'hx'
+            }
+        });
+    }
+</script>
+
+</html>

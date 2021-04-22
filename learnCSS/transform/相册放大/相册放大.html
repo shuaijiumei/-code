@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-color: #353b48;
+        display: flex;
+    }
+    
+    .body {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .bodyClicked {
+        justify-content: start;
+        align-items: flex-start;
+    }
+    
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    div {
+        width: 250px;
+        height: 250px;
+        border: 5px solid dimgrey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin-left: 10px;
+        transform-origin: top center;
+        transition-duration: .5s;
+        filter: blur(10px);
+    }
+    
+    div img {
+        width: 100%;
+    }
+    
+    main:hover div {
+        transform: scale(.8);
+        cursor: pointer;
+        filter: blur(15px);
+    }
+    
+    main div:hover {
+        transform: scale(1.6);
+        filter: none;
+        z-index: 2;
+    }
+    
+    main>div {
+        transition-duration: .5s;
+    }
+    
+    .click {
+        filter: none;
+        margin: 20px;
+    }
+</style>
+
+<body class="body">
+    <main>
+        <div>
+            <img src="./img/1 (1).jpg" alt="何欣1">
+        </div>
+        <div>
+            <img src="./img/1 (2).jpg" alt="何欣2">
+        </div>
+        <div>
+            <img src="./img/1 (8).jpg" alt="何欣3">
+        </div>
+    </main>
+</body>
+<script>
+    const divs = document.querySelectorAll('div');
+    const body = document.querySelector('body');
+
+    function disappear(i) {
+        for (let j = 0; j <= divs.length; j++) {
+            if (j != i) {
+                divs[j].style.transform = 'scale(0)';
+            }
+        }
+    }
+
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener('click', function() {
+            this.className = 'click';
+            disappear(i);
+            body.className = 'bodyClicked';
+
+        })
+
+    }
+</script>
+
+</html>
