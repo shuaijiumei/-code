@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        background-color: #34495e;
+    }
+    
+    main {
+        display: flex;
+        width: 300px;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    
+    main>div:first-child {
+        width: 100%;
+        height: 40px;
+        background-color: #d35400;
+    }
+    
+    main>article {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        transform: translateY(-100%);
+        z-index: -1;
+        transition-duration: 1s;
+    }
+    
+    article>div {
+        width: 100%;
+        height: 40px;
+        background-color: #f1c40f;
+        transition-duration: .5s;
+    }
+    
+    article>div:first-child {
+        transition-delay: 0;
+    }
+    
+    article>div:nth-child(2) {
+        transition-delay: .5s;
+    }
+    
+    article>div:last-child {
+        transition-delay: 1s;
+    }
+    
+    article>div::after {
+        display: block;
+        content: "";
+        background-color: #95a5a6;
+        width: 100%;
+        height: 2px;
+    }
+    
+    main:hover article>div:first-child {
+        transform: translateY(120px);
+    }
+    
+    main:hover article>div:nth-of-type(2) {
+        transform: translateY(120px);
+    }
+    
+    main:hover article>div:last-child {
+        transform: translateY(120px);
+    }
+</style>
+
+<body>
+    <main>
+        <div></div>
+        <article>
+            <div></div>
+            <div></div>
+            <div></div>
+        </article>
+    </main>
+
+</body>
+
+</html>
