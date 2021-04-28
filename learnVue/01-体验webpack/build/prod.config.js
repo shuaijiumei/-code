@@ -4,6 +4,6 @@ const baseConfig = require('./base.config')
 
 module.exports = webpackMerge(baseConfig, {
     plugins: [
-        new UglifyJsPlugin
+        // new UglifyJsPlugin
     ]
 })

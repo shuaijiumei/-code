@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-color: #34495e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    main {
+        width: 400px;
+        height: 400px;
+        border: solid 1px #ddd;
+    }
+    
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: #f1c40f;
+        animation-name: translate, background;
+        animation-duration: 4s, 4s;
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes translate {
+        25% {
+            transform: translateX(300px);
+        }
+        50% {
+            transform: translate(300px, 300px);
+        }
+        75% {
+            transform: translateY(300px);
+        }
+    }
+    
+    @keyframes background {
+        25% {
+            background-color: #fff;
+            transform: translateX(300px);
+        }
+        50% {
+            background-color: #e67e22;
+        }
+        75% {
+            background-color: #9b59b6;
+        }
+    }
+</style>
+
+<body>
+    <main>
+        <div></div>
+    </main>
+</body>
+
+</html>
