@@ -70,11 +70,15 @@ module.exports = {
     },
     plugins: [
         new webpack.BannerPlugin('最终解释权归tby所有'),
+
+
         new HtmlWebpackPlugin({
             template: 'index.html'
         }),
+
+
         //丑化代码，压缩文件大小
-        // new UglifyJsPlugin()
+        new UglifyJsPlugin()
     ],
     devServer: {
         contentBase: './dist',

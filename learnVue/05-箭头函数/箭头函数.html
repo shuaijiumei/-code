@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1.直接定义函数
+        const aaa = function() {}
+            //2.对象中定义函数
+        const bbb = {
+            bbb: function() {},
+            ccc() {
+
+            }
+        }
+
+        //3.es6箭头函数
+        const ddd = () => {
+
+        }
+
+        //3.1 一个参数的时候
+        const power = num => {
+            return num * num;
+        }
+
+        //3.2 函数代码块中只有一行代码
+        const mul = (num1, num2) => num1 + num2;
+    </script>
+
+</body>
+
+</html>

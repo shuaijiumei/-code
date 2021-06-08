@@ -4,6 +4,7 @@
     <router-link to="/about">关于</router-link>
     <router-link  v-bind:to="'/user/'+ userId " >用户</router-link>
     <button @click="profileClick" >档案</button>
+    <button @click="linkToHome">首页</button>
     <router-view></router-view>
   </div>
 </template>
@@ -17,6 +18,10 @@ export default {
     }
   },
   methods:{
+    linkToHome(){
+      this.$router.push('/home')
+    },
+
     profileClick(){
       this.$router.push({
         path:'/profile',

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: steelblue;
+    }
+    
+    div {
+        width: 200px;
+        height: 200px;
+        margin-left: 50px;
+        animation-duration: 3s;
+        border-radius: 50%;
+    }
+    
+    div:first-child {
+        background-color: white;
+        animation-name: one;
+        animation-fill-mode: none;
+    }
+    
+    div:nth-child(2) {
+        animation-delay: 3s;
+        background-color: white;
+        animation-name: two;
+        animation-fill-mode: backwards;
+    }
+    
+    div:nth-child(3) {
+        background-color: lightpink;
+        animation-name: three;
+        animation-fill-mode: forwards;
+    }
+    
+    div:nth-child(4) {
+        background-color: lightgreen;
+        animation-name: four;
+        animation-fill-mode: both;
+    }
+    
+    @keyframes one {
+        33% {
+            background-color: paleturquoise;
+        }
+        66% {
+            background-color: blue;
+        }
+        100% {
+            background-color: darkblue;
+        }
+    }
+    
+    @keyframes two {
+        from {
+            background-color: teal;
+        }
+        33% {
+            background-color: darkgray;
+        }
+        66% {
+            background-color: gray;
+        }
+        100% {
+            background-color: black;
+        }
+    }
+    
+    @keyframes three {
+        33% {
+            background-color: pink;
+        }
+        66% {
+            background-color: palevioletred;
+        }
+        100% {
+            background-color: red;
+        }
+    }
+    
+    @keyframes four {
+        33% {
+            background-color: lime;
+        }
+        66% {
+            background-color: green;
+        }
+        100% {
+            background-color: darkgreen;
+        }
+    }
+</style>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</body>
+
+</html>

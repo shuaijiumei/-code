@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import Router from 'vue-router'
 
 //实现路由懒加载
@@ -9,7 +10,24 @@ const about = () =>
 const User = () =>
     import ('../components/User.vue')
 
+
+//1.注入插件
 Vue.use(Router)
+
+// //2.定义路由
+// const routes = [{
+//     path: '',
+//     component: home,
+//     children: [{}]
+// }]
+
+// //3.创建router实例
+// const router = new VueRouter({
+//     routes
+// })
+
+// //4.导出router实例
+// export default router
 
 
 
