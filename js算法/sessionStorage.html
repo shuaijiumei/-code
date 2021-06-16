@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="" id="">
+        <button>存储数据</button>
+        <button>获取数据</button>
+        <button>删除数据</button>
+        <button>清空所有数据</button>
+    </div>
+    <script>
+        let input = document.querySelector('input')
+        let btns = document.querySelectorAll('button')
+
+        btns[0].addEventListener('click', () => {
+            let val = input.value
+            sessionStorage.setItem('val1', val)
+            console.log('存储成功');
+            console.log(this);
+            btns[0].innerText = '修改数据'
+        })
+
+        btns[1].addEventListener('click', () => {
+            console.log(sessionStorage.getItem('val1'));
+        })
+
+        btns[2].addEventListener('click', () => {
+            sessionStorage.removeItem('val1')
+            console.log('删除成功！');
+        })
+
+        btns[3].addEventListener('click', () => {
+            sessionStorage.clear()
+            console.log('全部清除成功！');
+        })
+    </script>
+</body>
+
+</html>
