@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  // ... 方法对数组进行展开
+  let arr1 = [1,23,3421,213]
+  let arr2 = [2231,214,32]
+  console.log(...arr1)   // 将数组的所有元素输出
+  let arr3 = [...arr1,...arr2] // 将数组拼接起来
+  console.log(arr3)
+
+  // ... 方法在函数中的使用
+  // 用 ... 来接受多个参数
+  function sum(...numbers){
+    return numbers.reduce((pre,current)=> pre+current)
+  }
+
+  // ...  方法在对象中的使用
+  // 快捷拷贝对象
+  let person = {name:'tbt',age:20}
+  let person2 = {...person} // 复制
+  person.name ='hx'
+  console.log(person2)  // 证明复制
+
+  console.log(sum(1,23,4,32))
+</script>
+</body>
+</html>

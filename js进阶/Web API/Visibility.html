@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  let pageVisibility = document.visibilityState
+
+  document.addEventListener("visibilitychange", function (){
+    if (document.visibilityState === 'hidden'){
+      document.title = '不要离开我~'
+    }
+    if (document.visibilityState === 'visible'){
+      document.title = '欢迎光临'
+    }
+  })
+</script>
+</body>
+</html>

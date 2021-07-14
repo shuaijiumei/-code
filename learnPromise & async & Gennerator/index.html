@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <button id="app">
+    按下发送
+  </button>
+
+<script>
+
+  let btn = document.querySelector('#app')
+  btn.addEventListener('click',function (){
+
+    let xhr1 = new XMLHttpRequest()
+
+    xhr1.open("GET",'http://localhost:8000/server',true)
+
+    let xhr2 = new XMLHttpRequest()
+    xhr2.open("POST",'http://127.0.0.1:8000/json-server',true)
+
+    let xhr3 = new XMLHttpRequest()
+    xhr3.open("GET",'http://127.0.0.1:8000/axios-server',true)
+
+
+
+    new Promise((resolve, reject)=> {
+      // 发起xhr1 的请求
+      xhr1.send()
+      xhr1.onreadystatechange = function (){
+        if (this.readyState === 4){
+          if (this.status >=200 && this.status <300){
+            resolve(this.response)
+          }
+        }
+      }
+    }).then(res=>{
+      // 处理xhr1 的数据
+      console.log('xhr1:  '+ res)
+      return new Promise(((resolve, reject) => {
+        xhr2.send()
+        xhr2.onreadystatechange = function (){
+          if (this.readyState === 4){
+            if (this.status >=200 && this.status <300){
+              resolve(this.response)
+            }
+          }
+        }
+      }))
+    }).then(res=>{
+      // 处理xhr2 的数据
+      console.log('我是xhr2的数据'+res)
+
+      // 发起xhr3 的请求
+      return new Promise(((resolve, reject) => {
+        xhr3.send()
+        xhr3.onreadystatechange = function (){
+          if (this.readyState === 4){
+            if (this.status >=200 && this.status <300){
+              resolve(this.response)
+            }
+          }
+        }
+      }))
+    }).then(res=>{
+      console.log('我是xhr3的 '+res)
+    }).catch(err=>{
+      alert(err)
+    })
+
+  })
+
+
+</script>
+</body>
+</html>
