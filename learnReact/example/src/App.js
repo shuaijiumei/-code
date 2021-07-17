@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react'
+import Header from "./components/Header";
+import List from "./components/List";
+import Footer from "./components/Footer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component{
+  state = {
+    list:[],
+    doneNum:0
+  }
+  // 数据在哪，方法就在哪
+  addToDo = (toDoList)=>{
+    this.setState({
+      list:[toDoList,...this.state.list]
+    })
+  }
+  changeDoneNum = (doneNum)=>{
+    this.setState({
+      doneNum:doneNum
+    })
+    console.log(this.state.doneNum)
+  }
+
+  render() {
+    return(
+        <div>
+          <Header addToDo={this.addToDo} list={this.props.list} />
+          <List doneNum={this.state.doneNum} changeDoneNum={this.changeDoneNum} value={this.state.list} />
+          <Footer value={this.state.list}/>
+        </div>
+    )
+  }
 }
-
-export default App;

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function fn() {
+            let num = 10
+                // 被访问的这个变量所在的函数 这个函数就称为闭包函数
+            function fns() {
+                // 访问了另一个函数内的局部变量
+                console.log(num);
+            }
+            return fns
+        }
+        let f = fn()
+        f()
+    </script>
+</body>
+
+</html>

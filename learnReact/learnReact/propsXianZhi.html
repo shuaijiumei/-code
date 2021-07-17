@@ -2,9 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<div id="test1">
+</div>
+<div id="test2">
+
+</div>
+<script src="./dependency/react.development.js"></script>
+<script src="dependency/react-dom.development.js"></script>
+<script src="dependency/babel.min.js"></script>
+<!-- 引入prop-types -->
+<script src="./dependency/prop-types.js"></script>
+
+<script type="text/babel">
+class Person extends React.Component{
+
+// 类型限制
+  static propTypes = {
+    name:PropTypes.string.isRequired, // 必须传
+    sex:PropTypes.string,
+    age:PropTypes.number,  // 限制为number
+    say:PropTypes.func   // 限制函数
+  }
+// 指定默认值
+  static defaultProps = {
+    sex:'secret'
+  }
+
+  render() {
+    const {name,age,sex} = this.props
+     // props 是只读的，不能修改
+    console.log(this)
+    return(
+            <ul>
+              <li>姓名：{name}</li>
+              <li>年龄：{age}</li>
+              <li>性别: {sex}</li>
+            </ul>
+    )
+  }
+
+
+
+}
+
+const wang = {
+  name:'laowang',
+  age:18,
+  sex:'man'
+}
+const tby = {
+  name:'tby',
+  age:20,
+  say(){
+    console.log('i am speaking')
+  }
+}
+
+ReactDOM.render(
+        <Person {...wang} />,
+        document.getElementById('test1')
+)
+ReactDOM.render(
+        <Person {...tby} />,
+        document.getElementById('test2')
+)
+
+</script>
 </body>
 </html>

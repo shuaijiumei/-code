@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .body {
+        widows: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #2c3e50;
+    }
+    
+    div:nth-of-type(1) {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+    
+    div:nth-of-type(2) {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+    }
+    
+    div:nth-of-type(3) {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+    }
+    
+    @keyframes dance {
+        from {
+            transform: scale(1.2);
+        }
+        30% {
+            transform: scale(.9);
+        }
+        50% {
+            transform: scale(.6);
+        }
+        to {
+            transform: scale(1.1);
+        }
+    }
+    
+    .dance {
+        animation-name: dance;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+    }
+</style>
+
+<body>
+    <main>
+        <div></div>
+        <div></div>
+        <div></div>
+    </main>
+
+</body>
+<script>
+    let div = document.querySelectorAll('div')
+    let body = document.body
+    let main = document.querySelector('main')
+    console.log(div);
+
+    function update() {
+        // body
+        body.className = 'body'
+
+        div[0].style.transform = "rotate(135deg)"
+        div[0].style.transformOrigin = 'center'
+        div[1].style.transform = "translate(-40%,-40%)"
+        div[2].style.transform = "translate(40%,-40%)"
+
+
+        main.className = 'dance'
+
+    }
+    window.requestAnimationFrame(update)
+</script>
+
+</html>

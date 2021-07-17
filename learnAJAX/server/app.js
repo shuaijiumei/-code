@@ -9,12 +9,13 @@ const app = express();
 app.get('/server', (request, response) => {
     // 设置响应头 允许跨域
     response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Headers', '*');
     //设置响应体
     response.send('Hello,AJAX');
 
 });
 //接受任意请求
-app.all('/json-server', (request, response) => {
+app.post('/json-server', (request, response) => {
     // 设置响应头 允许跨域
     response.setHeader('Access-Control-Allow-Origin', '*');
     response.setHeader('Access-Control-Allow-Headers', '*');
@@ -28,6 +29,7 @@ app.all('/json-server', (request, response) => {
     response.send(str);
 
 });
+
 app.all('/axios-server', (request, response) => {
     // 设置响应头 允许跨域
     response.setHeader('Access-Control-Allow-Origin', '*');

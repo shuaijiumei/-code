@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div>
+  <button>请求资源</button>
+</div>
+
+<script>
+  /**
+   * Author: TBY on 2021-07-08
+   * note 笔记
+   * tips 特别注意
+   * example 例子
+   */
+  const btn = document.querySelector('button')
+  btn.addEventListener("click", function (){
+    console.log('some info')
+    let xhr = new XMLHttpRequest()
+    xhr.open("GET",'http://localhost:9000/home')
+    xhr.send()
+    xhr.onreadystatechange = function (){
+      if (xhr.readyState === 4 && xhr.status === 200){
+        document.write(xhr.response)
+      }
+    }
+  })
+
+
+</script>
+</body>
+</html>

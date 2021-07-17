@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text">
+        <h2></h2>
+    </div>
+    <script>
+        let inp = document.querySelector('input')
+        let h2 = document.querySelector('h2')
+        inp.addEventListener('keypress', function() {
+            console.log('hi');
+            let val = inp.value
+            h2.innerText = val
+        })
+        inp.addEventListener('keyup', function() {
+            console.log('hi');
+            let val = inp.value
+            h2.innerText = val
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+console.log(Number.parseInt('90%') / 100)

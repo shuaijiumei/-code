@@ -2,9 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+  <div id="test1">
+  </div>
+  <div id="test2">
+
+  </div>
+  <script src="./dependency/react.development.js"></script>
+  <script src="dependency/react-dom.development.js"></script>
+  <script src="dependency/babel.min.js"></script>
+  <!-- 引入prop-types -->
+  <script src="./dependency/prop-types.js"></script>
+  <script type="text/babel">
+    class Login extends React.Component{
+      state = {
+        username:'',
+        password:''
+      }
+      saveFormData = (DataType)=>{
+        return (event)=>{
+          this.setState({[DataType]:event.target.value})
+        }
+      }
+
+      render() {
+        return(
+                <form action="https://www.baidu.com">
+                  {/*
+                  onChange的绑定值是有传参的函数，每次都会去指向这个函数，然后这个函数的返回值作为返回
+                  如果是 onChange = {this.saveFormData} 的话，就是直接绑定了这个函数，每次都去调用这个函数
+                  也可以直接写一个函数 ()=>{ }  这样就可以直接拿到这个值
+                  */}
+                  用户名：<input type="text"  onChange={this.saveFormData('username')} name="uersname"/>
+                  密码：<input type="password" onChange={this.saveFormData('password')} name="password"/>
+                </form>
+        )
+      }
+    }
+
+    ReactDOM.render(
+            <Login/>,
+            document.getElementById('test1')
+    )
+  </script>
 </body>
 </html>

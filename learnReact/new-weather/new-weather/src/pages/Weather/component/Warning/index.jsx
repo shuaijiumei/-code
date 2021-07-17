@@ -1,26 +1,24 @@
 /**
-* Author: TBY on 2021-07-09
-* note 笔记
-* tips 特别注意
-* example 例子
-*/
+ * Author: TBY on 2021-07-09
+ * note 笔记
+ * tips 特别注意
+ * example 例子
+ */
 import React, {useEffect} from "react";
+import Style from './Warning.module.css'
 
-const App = ()=>{
+const Warning = (props) => {
 
-  useEffect(()=>{
-    console.log('i am App')
-    return()=>{
-      
+  useEffect(() => {
+    return () => {
+
     }
-  },[])
-  
-  
+  }, [])
+
   return(
-      <div>
-        I am App.....
-      </div>
+      <div className={Style.tips}>这是一条温馨提示</div>
   )
+
 }
-export default App
+export default Warning
 

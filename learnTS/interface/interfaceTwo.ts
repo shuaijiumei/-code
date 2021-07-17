@@ -16,4 +16,4 @@ function createPerson(config:Person){
     console.log(c)
     console.log(w)
 }
-createPerson({clolo:'red',width:200})
+// createPerson({clolo:'red',width:200})  // tips error

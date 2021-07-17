@@ -5,6 +5,7 @@
  * example 例子
  */
 import React, {useEffect} from "react";
+import {withRouter} from 'react-router-dom'
 
 const Header = () => {
 
@@ -22,5 +23,5 @@ const Header = () => {
       </div>
   )
 }
-export default Header
+export default withRouter(Header)
 

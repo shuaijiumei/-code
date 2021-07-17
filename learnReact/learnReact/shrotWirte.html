@@ -2,9 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<div id="test">
+
+</div>
+<script src="./dependency/react.development.js"></script>
+<script src="dependency/react-dom.development.js"></script>
+<script src="dependency/babel.min.js"></script>
+<script type="text/babel">
+  class Weather extends React.Component{
+    // 初始化状态
+    state = {isHot:false}
+
+    // 定义函数的时候，用箭头函数赋值
+    changeWether = ()=>{
+      console.log(this)
+      const isHot = this.state.isHot
+      this.setState({
+        isHot: !isHot
+      })
+    }
+
+    test(){
+      console.log(this)
+    }
+
+    render() {
+      console.log(this)
+      return(
+              <div>
+                今天天气很 {this.state.isHot ? '热':'凉爽'}
+                {/* 两种解决办法*/}
+                {/*
+                <button onClick={()=>{ this.changeWether()}}>修改</button>
+                <button onClick={this.changeWether.bind(this)}>修改</button>
+                */}
+                <button onClick={this.changeWether}>change</button>
+
+
+                <button onClick={this.test}>展示对象函数中this的指向</button>
+              </div>
+      )
+    }
+  }
+
+  ReactDOM.render(
+          <Weather/>,
+          document.getElementById('test')
+  )
+
+
+</script>
 </body>
 </html>

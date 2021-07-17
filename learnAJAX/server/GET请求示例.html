@@ -92,7 +92,17 @@
                     console.log(xhr.getAllResponseHeaders); // 所有响应头
                     console.log(xhr.response); //响应体
 
-                    div.innerHTML = xhr.response;
+                  new Promise(((resolve, reject) => {
+                    resolve(xhr.response)
+                    reject(xhr.status)
+                  })).then(res=>{
+                    console.log(res)
+                    div.innerHTML = res
+                  }).catch(err=>{
+                    alert(err)
+                  })
+
+
                 } else {
 
                 }

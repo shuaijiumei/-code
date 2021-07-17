@@ -1,0 +1,38 @@
+.page{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.card{
+  align-items: center;
+  width: 80vw;
+  height: 40vh;
+  background-color: rgba(99, 110, 114,.9);
+  box-shadow: 3px 3px 3px grey;
+
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  font-weight: 500;
+  font-size: large;
+
+  margin-bottom: 10px;
+}
+.card>div:nth-child(1){
+  font-weight: 700;
+  font-size: larger;
+}
+.wind{
+  margin-left: 5px;
+}
+.line{
+  height: 1px;
+  background-color: grey;
+  width: 100%;
+  display: block;
+}
+
+

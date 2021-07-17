@@ -5,8 +5,24 @@
  * example 例子
  */
 import {defineConfig} from "umi";
-import routes from "./routes";
 
 export default defineConfig({
-  routes:routes
+  routes:[
+    {
+      path:'/',exact:true,component:'@/pages/index'
+    },
+    {
+    path:'/home',exact:true,component:'@/pages/Home'
+    },
+    {
+      path:'/profile',exact:true,component:'@/pages/Profile'
+    },
+    {
+      path:'/articles',exact:true,component:'@/pages/Articles'
+    }
+  ],
+  dva:{
+    immer:true,
+    hmr:false
+  }
 })

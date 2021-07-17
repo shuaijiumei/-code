@@ -19,7 +19,7 @@ const MyNavLink = (props) => {
 
 
   return (
-      <NavLink activeClassName={Style.handsome} to={props.to}/>
+      <NavLink activeClassName={Style.handsome} {...props}/>
   )
 }
 export default MyNavLink

@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<div id="app">
+  <button>发送请求</button>
+  <span></span>
+</div>
+<script>
+  const btn = document.querySelector('button')
+  const span = document.querySelector('span')
+
+
+
+  const send = function (){
+    let xhr = new XMLHttpRequest()
+
+  }
+  btn.addEventListener("click", send)
+</script>
+
 </body>
 </html>

@@ -1,26 +1,26 @@
 /**
-* Author: TBY on 2021-07-05
-* note 笔记
-* tips 特别注意
-* example 例子
-*/
+ * Author: TBY on 2021-07-05
+ * note 笔记
+ * tips 特别注意
+ * example 例子
+ */
 import React, {useEffect} from "react";
 
-const App = ()=>{
+const Home = () => {
 
-  useEffect(()=>{
-    console.log('i am App')
-    return()=>{
-      
+  useEffect(() => {
+    console.log('i am Home')
+    return () => {
+
     }
-  },[])
-  
-  
-  return(
+  }, [])
+
+
+  return (
       <div>
-        I am App.....
+        I am Home.....
       </div>
   )
 }
-export default App
+export default Home
 

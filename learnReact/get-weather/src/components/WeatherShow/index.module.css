@@ -1,4 +1,25 @@
 .info{
-  font-weight: 700;
+  font-weight: 500;
   font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+.card{
+  text-align: center;
+  font-size: medium;
+  box-shadow: 5px 5px 5px grey;
+}
+.circle{
+  width: 70vw;
+  height: auto;
+  background-color:#dfe4ea;
+  box-shadow: 3px 3px 3px grey;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 借助父构造函数继承属性
+        // 1. 父构造函数
+        function Father(name, age) {
+            // 这里的 this指向父构造函数的对象实例
+            this.name = name
+            this.age = age
+        }
+        // 2. 子构造函数
+        function Son(name, age) {
+            // 把 this 改成指向Son的this
+            Father.call(this, name, age)
+        }
+        let son1 = new Son('hds', 20)
+        console.log(son1);
+
+
+        // 借助父函数继承方法
+        Father.prototype.money = function() {
+                console.log(1000);
+            }
+            // 执行此方法的时候，修改Son 的原型对象也会修改父亲的 原型对象
+            // 浅拷贝
+            // Son.prototype = Father.prototype
+
+        // 给 Son.prototype 赋值一个 Father 的实例
+        // 修改了原型对象后， 别忘记constuctor 指回原来的构造函数
+        Son.prototype = new Father()
+        Son.prototype.constructor = Son
+    </script>
+</body>
+
+</html>

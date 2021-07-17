@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+<!--    开启理想视口，用于做移动端的适配 -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!--    仅支持安卓手机，兼容性差 -->
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -14,6 +16,7 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
+<!--    应用加壳的配置 -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -27,6 +30,7 @@
     <title>React App</title>
   </head>
   <body>
+<!--    浏览器不支持js运行的时候报错 -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

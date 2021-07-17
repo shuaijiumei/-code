@@ -2,9 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<div id="test"></div>
+
+<script src="../dependency/react.development.js"></script>
+<script src="../dependency/react-dom.development.js"></script>
+<script src="../dependency/prop-types.js"></script>
+<script src="../dependency/babel.min.js"></script>
+
+<script type="text/babel">
+  class Life extends React.Component{
+    state = {opacity:1}
+
+    death = ()=>{
+      // 卸载组件
+      ReactDOM.unmountComponentAtNode(document.getElementById('test'))
+
+    }
+
+    // 组件即将卸载
+    componentWillUnmount() {
+      // 清除定时器
+      clearInterval(this.timer)
+    }
+
+    // 组件挂载完毕
+    componentDidMount() {
+      this.timer = setInterval(()=>{
+        let {opacity} = this.state
+        opacity -= 0.1
+        if (opacity <= 0) opacity = 1
+        this.setState({opacity: opacity})
+      },200)
+    }
+
+    // 初始化渲染，状态更新之后
+    render() {
+      // 无限的递归，render 在 setState 之后就会立马调用，所以相当于开了超级多的定时器
+      // setInterval(()=>{
+      //   let {opacity} = this.state
+      //   opacity -= 0.1
+      //   if (opacity <= 0) opacity = 1
+      //   this.setState({opacity: opacity})
+      // },200)
+
+      return(
+              <div>
+                <h2 style={{opacity:this.state.opacity}}>react学不会</h2>
+                <button onClick={this.death}>继续学</button>
+              </div>
+      )
+    }
+  }
+
+  ReactDOM.render(
+          <Life/>,
+          document.getElementById('test')
+  )
+</script>
+
 </body>
 </html>

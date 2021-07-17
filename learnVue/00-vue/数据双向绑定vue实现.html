@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div id="app">
+    <input type="text" v-model="message">
+    <input type="text" name="" :value="message" v-on:input="dataChange">
+    <h2>{{message}}</h2>
+</div>
+
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.common.dev.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'i love hx'
+            },
+            methods: {
+                dataChange(e) {
+                    this.message = e.target.value
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -5,10 +5,18 @@
   <title>Title</title>
 </head>
 <body>
+<div id="test"></div>
 
-<script>
-  <script src="https://cdn.bootcdn.net/ajax/libs/react/18.0.0-alpha-568dc3532/cjs/react-jsx-dev-runtime.development.js"></script>
-  <script src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.0.0-alpha-568dc3532/cjs/react-dom-server-legacy.browser.development.js"></script>
+<script src="./dependency/react.development.js"></script>
+<script src="dependency/react-dom.development.js"></script>
+<script src="dependency/babel.min.js"></script>
+<script type="text/babel">
+  const VDOM = (
+          <h1 id="title">
+            <span>Hello,React</span>
+          </h1>
+  )
+  ReactDOM.render(VDOM,document.getElementById('test'))
 
 
 </script>

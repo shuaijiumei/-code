@@ -5,6 +5,12 @@
   <title>Title</title>
 </head>
 <body>
+<script>
+  if (window.Worker){
+    let worker = new Worker('worker.js')
+    worker.postMessage("hello world")
 
+  }
+</script>
 </body>
 </html>

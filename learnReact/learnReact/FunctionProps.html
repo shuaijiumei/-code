@@ -2,9 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<div id="test1">
+</div>
+<div id="test2">
+
+</div>
+<script src="./dependency/react.development.js"></script>
+<script src="dependency/react-dom.development.js"></script>
+<script src="dependency/babel.min.js"></script>
+<!-- 引入prop-types -->
+<script src="./dependency/prop-types.js"></script>
+<script type="text/babel">
+  function MyC(props){
+    const {name,age,sex} = props
+    return(
+            <ul>
+              <li>姓名：{name}</li>
+              <li>性别：{age}</li>
+              <li>年龄：{sex}</li>
+            </ul>
+    )
+  }
+  // 函数式组件 限制 props
+  MyC.propTypes = {
+    name:PropTypes.string.isRequired,
+    age:PropTypes.number,
+    sex:PropTypes.string
+  }
+  MyC.defaultProps = {
+    sex:'man',
+    age:20
+  }
+
+  const tby={
+    name:'tby',
+    age:20,
+    sex:'man'
+  }
+  ReactDOM.render(
+          <MyC {...tby}/>,
+          document.getElementById('test1')
+  )
+</script>
 </body>
 </html>

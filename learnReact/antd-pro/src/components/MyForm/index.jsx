@@ -8,7 +8,7 @@ import React from "react";
 import AppStyle from "../../App.module.css";
 import {Button, Checkbox, Form, Input} from "antd";
 
-const App = () => {
+const MyForm = () => {
 
 
   const onFinish = (values)=>{
@@ -90,5 +90,5 @@ const App = () => {
       </div>
   )
 }
-export default App
+export default MyForm
 

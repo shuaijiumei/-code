@@ -1,9 +1,10 @@
 .handsome{
-  color: pink;
+  color: red;
+  text-decoration: none;
 }
 .show{
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   background-color: lightpink;
 
 }

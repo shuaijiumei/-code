@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<div id="test"></div>
+
+<script src="./dependency/react.development.js"></script>
+<script src="dependency/react-dom.development.js"></script>
+<script src="dependency/babel.min.js"></script>
+<script type="text/babel">
+  const myId = 'tbyuserID'
+  const myData = 'Hello,React'
+
+  const VDOM = (
+          <div style={{color:'green',fontSize:'30px'}}>
+            <h1>{myId}</h1>
+            <h2>{myData}</h2>
+          </div>
+  )
+  ReactDOM.render(VDOM,document.getElementById('test'))
+
+</script>
 </body>
 </html>

@@ -5,18 +5,19 @@
  * example 例子
  */
 import React, {useEffect} from "react";
-import {Tabs,Badge} from 'antd-mobile'
+import {Tabs} from 'antd-mobile'
+import Weather from "../../pages/Weather";
+import Profile from "../../pages/Profile";
 
 const MyTabs = () => {
 
   useEffect(() => {
-    console.log('i am MyTabs')
     return () => {
 
     }
   }, [])
 
-  const tabs2 = [
+  const tabs = [
     { title: '天气情况', sub: '1' },
     { title: '个人详情', sub: '2' }
   ];
@@ -24,19 +25,18 @@ const MyTabs = () => {
 
   return (
       <div>
-        <Tabs tabs={tabs2}
-              initialPage={1}
+        <Tabs tabs={tabs}
+              initialPage={'1'}
               tabBarPosition="bottom"
               renderTab={tab => <span>{tab.title}</span>}
+              swipeable={false}
+              tabBarTextStyle={{letterSpacing:'.1em',fontWeight:'600',height:'8vh'}}
         >
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
-            Content of first tab
+          <div style={{ height: '92vh', backgroundColor: '#f1c40f' }}>
+            <Weather/>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
-            Content of second tab
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
-            Content of third tab
+          <div style={{ height: '92vh', backgroundColor: '#3498db' }}>
+            <Profile/>
           </div>
         </Tabs>
       </div>

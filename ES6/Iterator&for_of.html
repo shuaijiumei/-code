@@ -6,5 +6,43 @@
 </head>
 <body>
 
+<script>
+  // 自定义一个成功遍历器函数
+  function makeIterator(arr){
+    let nextIndex = 0
+    return{
+      // next() 方法开始遍历这个数组
+      next:function (){
+        return nextIndex < arr.length ?
+                {value:arr[nextIndex++],done:false} :
+                {value:undefined,done: true}
+      }
+    }
+  }
+
+  let iterator = makeIterator([12,3,12])
+  console.log(iterator.next())
+  console.log(iterator.next())
+  console.log(iterator.next())
+  console.log(iterator.next())
+  console.log('-----------------------')
+
+  let obj ={
+    name:'tby',
+    age:20,
+    sex:'man'
+  }
+  let arr =['a','b','c']
+
+  // for...in... 和 for...of... 的区别
+  for (let a in arr){
+    console.log(a)  //  只拿对象的键名
+  }
+  for (let a of arr) {
+    console.log(a)  // 可以拿到值
+  }
+
+</script>
+
 </body>
 </html>

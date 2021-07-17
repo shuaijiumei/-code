@@ -2,9 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<div id="test1"></div>
+<div id="test2"></div>
+<script src="./dependency/react.development.js"></script>
+<script src="dependency/react-dom.development.js"></script>
+<script src="dependency/babel.min.js"></script>
+<!-- 引入prop-types -->
+<script src="./dependency/prop-types.js"></script>
+<script type="text/babel">
+  class Demo extends React.Component{
+    state = {
+      isHot:true
+    }
+    change = ()=>{
+      this.setState({
+        isHot:!this.state.isHot
+      })
+    }
+    showData = ()=>{
+      console.log(this.input1.value)
+    }
+    saveInput = (c)=>{
+      this.input1 = c
+      console.log(c)
+    }
+    render() {
+      return(
+              <div>
+                <h2>今天天气好 {this.state.isHot ? '热':'冷'}</h2>
+                {/* 回调形
+                  调用了多少次呢？
+                  使用内联 函数的时候，在更新组件的时候会被调用两次，每次调用的时候，都会先清空当前节点，再更新
+                  <input ref={a=>this.input1 = a} type="text" placeholder="come"/>
+                */}
+                <input type="text" ref={this.saveInput}/>
+                <button onClick={this.change}>点击更新</button>
+                <input ref={a=>this.input2 = a} type="text" placeholder="come2"/>
+              </div>
+      )
+    }
+  }
+
+  ReactDOM.render(
+          <Demo/>,
+        document.getElementById('test1')
+  )
+</script>
 </body>
 </html>

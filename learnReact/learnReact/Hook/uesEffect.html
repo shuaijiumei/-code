@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<div id="test">
+
+</div>
+<script src="../dependency/react.development.js"></script>
+<script src="../dependency/react-dom.development.js"></script>
+<script src="../dependency/babel.min.js"></script>
+<script type="text/babel">
+  function Father(){
+    const [state,setState] = React.useState({
+      left:0,right:100,height:200
+    })
+    console.log(state)
+
+    React.useEffect(()=> {console.log(state)},[state])
+
+    function changeData(){
+      setState({
+        left: 20
+      })
+    }
+
+    return(
+            <div>
+              <button onClick={changeData}>点击修改state</button>
+            </div>
+    )
+  }
+
+  ReactDOM.render(<Father/>,document.getElementById('test'))
+
+</script>
+
 </body>
 </html>

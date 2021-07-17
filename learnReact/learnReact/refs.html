@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<div id="test1"></div>
+<div id="test2"></div>
+<script src="./dependency/react.development.js"></script>
+<script src="dependency/react-dom.development.js"></script>
+<script src="dependency/babel.min.js"></script>
+<!-- 引入prop-types -->
+<script src="./dependency/prop-types.js"></script>
+<script type="text/babel">
+  class Demo extends React.Component{
+    showData = ()=>{
+      const val = this.refs.input1.value
+      // 过期的refs
+      console.log(val)
+    }
+    render() {
+      return(
+              <div>
+                <input ref="input1" type="text" placeholder="点击显示" />
+                <button onClick={this.showData}>点击显示</button>
+                <input ref="input2" type="text" placeholder="失去焦点显示"/>
+              </div>
+      )
+    }
+  }
+
+  ReactDOM.render(
+          <Demo/>,
+          document.getElementById('test1')
+  )
+</script>
 </body>
 </html>

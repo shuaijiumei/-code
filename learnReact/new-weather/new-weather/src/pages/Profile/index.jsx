@@ -4,21 +4,40 @@
  * tips 特别注意
  * example 例子
  */
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
+import {Modal} from "antd";
+import Info from "./component/Info/Info";
 
 const Profile = () => {
+  const [isModalVisible,setIsModalVisible] = useState(true)
+  const [id,setId] = useState(true)
 
   useEffect(() => {
-    console.log('i am Profile')
     return () => {
 
     }
   }, [])
 
+  const handleOk = () => {
+    setIsModalVisible(false);
+    setId(true)
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+    setId(false)
+  };
 
   return (
       <div>
-        I am Profile.....
+        <Modal title="确认身份" visible={isModalVisible}
+               cancelText={'何欣'}
+               okText={'谭博尹'}
+               onOk={handleOk} onCancel={handleCancel}>
+          <p>谭博尹</p>
+          <p>何欣</p>
+        </Modal>
+        <Info flag={id}/>
       </div>
   )
 }

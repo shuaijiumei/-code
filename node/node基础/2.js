@@ -7,7 +7,19 @@
 
 let fs = require('fs')
 
-let data = fs.readFileSync('input.txt')
+// note 阻塞代码实例
+// example
+// let data = fs.readFileSync('input.txt')
+//
+// console.log(data.toString())
+// console.log('over')
 
-console.log(data.toString())
+// note 非阻塞代码
+//example
+
+fs.readFileSync('input.txt',function (err,data){
+
+  console.log(data.toString())
+})
+
 console.log('over')

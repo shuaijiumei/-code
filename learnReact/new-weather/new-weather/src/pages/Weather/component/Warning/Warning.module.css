@@ -2,4 +2,16 @@
   width: 80vw;
   height: 40px;
   border: 1px solid grey;
+
+  margin-top: 20px;
+
+  line-height: 40px;
+  text-align: center;
+
+  font-weight: 500;
+  font-family: SimHei, serif ;
+  font-size: medium;
+  letter-spacing: .1em;
+
+  background-color: rgba(253, 203, 110,1.0);
 }

@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<div id="test1">
+</div>
+<div id="test2">
+</div>
+<script src="./dependency/react.development.js"></script>
+<script src="dependency/react-dom.development.js"></script>
+<script src="dependency/babel.min.js"></script>
+<!-- 引入prop-types -->
+<script src="./dependency/prop-types.js"></script>
+
+<script type="text/babel">
+  class Demo extends React.Component{
+  //  调用之后可以返回一个容器，容器里可以存储ref所标识的节点
+    myRef = React.createRef() // 该容器专人专用
+
+    showData = ()=>{
+    //
+      console.log(this.myRef.current.value)
+    }
+
+    render() {
+      return(
+              <div>
+                <input ref={this.myRef} type="text"/>
+                <button onClick={this.showData}> 点击</button>
+              </div>
+      )
+    }
+  }
+  ReactDOM.render(
+          <Demo/>,
+          document.getElementById('test1')
+  )
+</script>
+
 </body>
 </html>

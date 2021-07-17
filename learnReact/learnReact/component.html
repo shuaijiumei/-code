@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<div id="test"></div>
+
+<script src="./dependency/react.development.js"></script>
+<script src="dependency/react-dom.development.js"></script>
+<script src="dependency/babel.min.js"></script>
+<script type="text/babel">
+  // 创建函数式组件
+function Hello(){
+  return (
+          <div>
+            <input type="text"/>
+          </div>
+  )
+}
+// 创建类式组件
+class Myc extends React.Component{
+
+  render() {
+    console.log(this)  // 指向组件实例对象
+    return(
+            <div>
+              <h1>I am fine</h1>
+            </div>
+    )
+  }
+}
+
+ReactDOM.render(
+        <Myc/>,
+        document.getElementById('test'))
+//        发现组件时类调用的，new出来该类的实例，并通过该实例调用到原型上的render方法,所以render里的this指向实例对象
+//          并将render返回的虚拟DOM返回为真实的DOM
+</script>
 </body>
 </html>

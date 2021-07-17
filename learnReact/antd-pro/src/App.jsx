@@ -5,8 +5,8 @@
  * example 例子
  */
 import React, {useEffect} from "react";
-import Hello from "./components/Hello/Hello";
-
+import './App.css'
+import ProTable from "./components/MyTable";
 const App = () => {
 
   useEffect(() => {
@@ -17,11 +17,11 @@ const App = () => {
   }, [])
 
 
+
   return (
-      <div>
-        I am App.....
-        <Hello/>
-      </div>
+     <div>
+       <ProTable/>
+     </div>
   )
 }
 export default App

@@ -2,9 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<div id="test">
+
+</div>
+<div id="test2">
+
+</div>
+<script src="./dependency/react.development.js"></script>
+<script src="dependency/react-dom.development.js"></script>
+<script src="dependency/babel.min.js"></script>
+<script src="dependency/prop-types.js"></script>
+<script type="text/babel">
+  class Person extends React.Component{
+    constructor(props) {
+      // 构造器是否接受props 是否传值给props是，取决于你是不是希望通过this访问props
+      super(props);
+      console.log(props)
+    }
+
+// 类型限制
+    static propTypes = {
+      name:PropTypes.string.isRequired, // 必须传
+      sex:PropTypes.string,
+      age:PropTypes.number,  // 限制为number
+      say:PropTypes.func   // 限制函数
+    }
+// 指定默认值
+    static defaultProps = {
+      sex:'secret'
+    }
+
+    render() {
+      const {name,age,sex} = this.props
+      // props 是只读的，不能修改
+      console.log(this)
+      return(
+              <ul>
+                <li>姓名：{name}</li>
+                <li>年龄：{age}</li>
+                <li>性别: {sex}</li>
+              </ul>
+      )
+    }
+  }
+
+  const wang={
+    name:'hgy',
+    age:20,
+    sex:'man'
+  }
+  ReactDOM.render(
+          <Person {...wang} />,
+          document.getElementById('test')
+  )
+</script>
 </body>
 </html>
